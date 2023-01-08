@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-    <TodoItem v-for="item in 5" :key="item"/>
+    <TodoItem v-for="item in todoList" :key="item._id" :todo="item"/>
   </div>
 </template>
 
@@ -9,6 +9,12 @@ import TodoItem from "@/components/todo/TodoItem"
 export default{
   components: {
     TodoItem
+  },
+  props:{
+    todoList: {
+      type: Array,
+      required:true,
+    }
   }
 }
 </script>

@@ -14,14 +14,14 @@ const createStore = () => {
         state.todoList.push(todo);
       },
       updateTodo(state, todo) {
-        let findIndex = state.todoList.findIndex(t => t.id == todo.id)
+        let findIndex = state.todoList.findIndex(t => t._id == todo._id)
         if (findIndex != -1) {
           state.todoList.splice(findIndex, 1, todo);
           //state.todoList[findIndex] = todo;
         }
       },
       deleteTodo(state, todo) {
-        let findIndex = state.todoList.findIndex(t => t.id == todo.id)
+        let findIndex = state.todoList.findIndex(t => t._id == todo._id)
         if (findIndex != -1) {
           state.todoList.splice(findIndex, 1);
         }
@@ -34,7 +34,11 @@ const createStore = () => {
       },
       addTodo(vuexContext, todo) {
         //Axios transactions...
-        vuexContext.commit("addTodo", todo)
+        let newTodo= {
+          _id: Math.ceil(Math.random(9) * Math.random()*1000),
+          text: todo
+        }
+        vuexContext.commit("addTodo", newTodo)
       },
       updateTodo(vuexContext, todo) {
         //Axios transactions...
