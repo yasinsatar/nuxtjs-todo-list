@@ -5,6 +5,7 @@
     :key="item._id"
     :todo="item"
     @deleteTodoEvent="$emit('deleteTodoEvent',$event)"
+    @updateTodoEvent="$emit('updateTodoEvent',$event)"
     />
   </div>
 </template>

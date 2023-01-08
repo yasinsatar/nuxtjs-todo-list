@@ -6,9 +6,15 @@
   <Alert v-if="todoList.length === 0" />
   <TodoList
    @deleteTodoEvent="deleteTodo($event)"
-   :todoList="todoList" v-else  />
+   :todoList="todoList" v-else
+   @updateTodoEvent="updateModal($event)"
+   />
 
-  <!-- <UpdateTodo /> -->
+   <UpdateTodo
+   :todo="toUpdateTodo"
+   @updateTodoEvent="updateTodo($event)"
+   :class=" {'show' : modal}"
+   @hideModalEvent="modal=$event" />
   </div>
 </template>
 
@@ -27,12 +33,21 @@ export default {
  },
  data(){
   return{
-
+    modal: false,
+    toUpdateTodo: null,
   }
  },
  methods:{
   addTodo(todo){
     this.$store.dispatch("addTodo", todo)
+  },
+  updateModal(todo){
+    this.modal=true;
+    this.toUpdateTodo= todo
+  },
+  updateTodo(updatedTodo){
+    this.modal=false;
+    this.$store.dispatch("updateTodo",updatedTodo);
   },
   deleteTodo(todo){
     this.$store.dispatch("deleteTodo",todo)
