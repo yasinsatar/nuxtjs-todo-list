@@ -1,10 +1,10 @@
 <template>
 <div class="container main-container pt-5">
   <h3 class="text-center">Express.js ile ToDo App | Nuxt.js</h3>
-  <TodoForm />
+  <TodoForm @addTodoEvent="addTodo($event)" />
   <h3 class="text-center mt-5 mb-3">Yapılacaklar Listesi</h3>
   <TodoList />
-  <UpdateTodo />
+  <!-- <UpdateTodo /> -->
   </div>
 </template>
 
@@ -18,6 +18,16 @@ export default {
   TodoForm,
   TodoList,
   UpdateTodo
+ },
+ data(){
+  return{
+
+  }
+ },
+ methods:{
+  addTodo(todo){
+   return this.$store.dispatch("addTodo", todo)
+  }
  }
 }
 </script>
