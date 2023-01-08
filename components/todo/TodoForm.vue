@@ -3,7 +3,7 @@
     <div class="col-md-6 offset-3 mt-5 d-flex">
       <input v-model="todoText" ref="todoTextInput" type="text" class="form-control form-control-lg mr-1"
         :class="{ 'is-invalid': isInvalid }">
-      <button @click="addTodo" class="btn btn-outline-dark">Ekle</button>
+      <button @click="addTodo" class="btn btn-outline-dark">Add</button>
     </div>
   </div>
 </template>
