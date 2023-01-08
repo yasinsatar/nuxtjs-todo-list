@@ -27,6 +27,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    "~/assets/bootstrap.min.css"
   ],
 
   /*
@@ -57,7 +58,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }
