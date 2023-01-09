@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const bodyParser = require('body-parser');
 
 module.exports = {
   mode: 'universal',
@@ -48,6 +49,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: "http://localhost:3000/api"
   },
 
   /*
@@ -60,5 +62,10 @@ module.exports = {
     extend(config, ctx) {
 
     }
-  }
+  },
+
+  serverMiddleware:[
+    bodyParser.json(),
+    "~/api",
+  ]
 }
