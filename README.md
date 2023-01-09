@@ -1,9 +1,12 @@
 # nuxtjs-todo-list
  
-This project's in base path create a .env file. And create a variable DB_CONNECT that your mongodb database's connect's url in the file.
+
 
 ## Build Setup
 ``` bash
+# create a .env file
+This project's in base path create a .env file. And create a variable DB_CONNECT that your mongodb database's connect's url in the file.
+
 # install dependencies
 npm install
 # serve with hot reload at localhost:3000
