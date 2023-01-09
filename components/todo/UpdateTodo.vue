@@ -1,6 +1,6 @@
 <template>
   <div class="update-container container-fluid d-flex flex-column justify-content-center align-items-center">
-  <div class="card shadow pt-2 pb-2" style="width: 30rem;">
+  <div class="card shadow pt-2 pb-2  w-75" >
     <div class="card-body">
       <h5 class="card-title">Edit To-do</h5>
       <input type="text" class="form-control mt-3 mb-3" v-model="loadedTodo.text">

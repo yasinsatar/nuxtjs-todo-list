@@ -34,7 +34,7 @@ export default {
  data(){
   return{
     modal: false,
-    toUpdateTodo: null,
+    toUpdateTodo: {},
   }
  },
  methods:{
